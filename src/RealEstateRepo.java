@@ -4,16 +4,19 @@ public class RealEstateRepo {
     private  int index = 0;
 
     public void add(RealEstate realEstate) {
-        if (index < realEstates.length) && !exists(realEstate) {
+        if ((index < realEstates.length) && !exists(realEstate)) {
             realEstates[index++] = realEstate;
         }
     }
 
     private boolean exists(RealEstate realEstate) {
-        boolean exists = false;
+
         for (int i = 0; i < index ; i++) {
-          exists =  realEstates[i].equals(realEstate)
+          if ( realEstates[i].equals(realEstate)) {
+              return true;
+          }
         }
+        return true;
     }
 
     public void displayAll(){
